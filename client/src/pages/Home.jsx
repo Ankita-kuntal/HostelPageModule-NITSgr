@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";
+import About from "../components/home/About";
 import React from 'react';
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
     <div className="min-h-screen flex flex-col bg-white text-navy">
       <Header />
 
-      {/* About Section */}
+      {/* About Section
       <section className="bg-gray-100 p-4">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-10 max-w-6xl mx-auto">
@@ -28,7 +29,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <About />
 
       {/* Services Section */}
       <section className="bg-gray-50 w-full">
