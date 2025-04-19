@@ -1,17 +1,11 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white" id="contact">
-      <div className="max-w-7xl mx-auto py-8 px-4">
-        <div>
-          <h3 className="text-lg font-semibold">Get in touch</h3>
-          <p>Contact us for more information</p>
-        </div>
-        <div className="mt-8 border-t border-gray-600 pt-4">
-          <p className="text-sm text-gray-400">
-            &copy; 2025 NIT Srinagar. All rights reserved.
-          </p>
+    <footer className="bg-gray-100 text-navy border-t border-gray-300 mt-12">
+      <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center text-sm">
+        <p>&copy; {new Date().getFullYear()} College Hostel Info. All rights reserved.</p>
+        <div className="mt-2 sm:mt-0 flex gap-4">
+          <a href="#" className="text-teal hover:underline">Privacy Policy</a>
+          <a href="#" className="text-teal hover:underline">Terms of Service</a>
         </div>
       </div>
     </footer>
@@ -19,3 +13,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

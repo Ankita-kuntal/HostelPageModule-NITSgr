@@ -1,6 +1,13 @@
+
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-white text-navy;
+  font-family: 'Inter', sans-serif;
+}
 
 
 
