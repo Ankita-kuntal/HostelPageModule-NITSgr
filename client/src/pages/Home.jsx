@@ -51,9 +51,7 @@ const Home = () => {
       </section> */}
       <Services />
 
-      {/* Contact Section */}
-      {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };
