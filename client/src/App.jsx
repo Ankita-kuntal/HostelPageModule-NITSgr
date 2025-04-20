@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
+import NewsAnnouncement from './components/NewsAnnouncement';
 import Home from './pages/Home';
 import GirlsHostel from './pages/GirlsHostel';
 import BoysHostel from './pages/BoysHostel';
@@ -15,6 +16,9 @@ function App() {
       <ScrollToTop />
       {/* Navbar */}
       <Navbar />
+      {/* News and Announcement */}
+      <NewsAnnouncement />
+      {/* Main Content */}
       <div className="mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
