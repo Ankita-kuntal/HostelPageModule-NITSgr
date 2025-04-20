@@ -10,7 +10,6 @@ const Header = () => {
     >
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white text-center px-4">
         <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold mb-4 text-white text-opacity-85">Hostel - NIT Srinagar</h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl">Find the ideal accommodation for your college journey</p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link 
             to="/hostel-admin" 
