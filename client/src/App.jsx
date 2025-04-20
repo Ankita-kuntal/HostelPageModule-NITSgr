@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import GirlsHostel from './pages/GirlsHostel';
@@ -11,6 +12,8 @@ import Footer from './components/home/Footer';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+      {/* Navbar */}
       <Navbar />
       <div className="mx-auto">
         <Routes>
