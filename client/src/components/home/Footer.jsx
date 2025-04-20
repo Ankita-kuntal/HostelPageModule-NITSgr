@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6 text-center text-sm">
         <p>
           &copy; All Rights Reserved {new Date().getFullYear()} CSC Web Team,
-          NIT Srinagar .
+          NIT Srinagar.
         </p>
         {/* <div className="mt-2 sm:mt-0 flex gap-4">
           <a href="#" className="text-teal hover:underline">
