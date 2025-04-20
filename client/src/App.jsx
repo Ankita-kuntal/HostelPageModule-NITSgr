@@ -6,6 +6,7 @@ import BoysHostel from './pages/BoysHostel';
 import HostelIncharge from './pages/HostelIncharge';
 import HostelAdmin from './pages/HostelAdmin';
 import HostelRules from './pages/HostelRules';
+import Footer from './components/home/Footer';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path="/hostel-rules" element={<HostelRules />} />
         </Routes>
       </div>
+      {/* Footer */}
+      <Footer />
     </Router>
   );
 }
