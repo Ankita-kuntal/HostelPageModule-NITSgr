@@ -4,29 +4,15 @@ import logo from "../assets/images/logo-black.png";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showAntiRaggingDropdown, setShowAntiRaggingDropdown] = useState(false); // State for Anti-Ragging dropdown
+
   return (
     <nav className="bg-teal-700 text-white text-opacity-90 p-4 flex items-center justify-between">
-      <img src={logo} alt="Logo" className="h-12 w-auto" />{" "}
-      {/* Align logo to the left */}
+      <img src={logo} alt="Logo" className="h-12 w-auto" />
       <ul className="flex flex-wrap justify-end gap-4 text-sm sm:text-base font-medium">
         <li>
           <Link to="/" className="hover:underline">
             Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/girls-hostel" className="hover:underline">
-            Girls Hostel
-          </Link>
-        </li>
-        <li>
-          <Link to="/boys-hostel" className="hover:underline">
-            Boys Hostel
-          </Link>
-        </li>
-        <li>
-          <Link to="/anti-ragging" className="hover:underline">
-            Anti-Ragging
           </Link>
         </li>
         <li
@@ -75,8 +61,55 @@ const Navbar = () => {
           )}
         </li>
         <li>
+          <Link to="/girls-hostel" className="hover:underline">
+            Girls Hostel
+          </Link>
+        </li>
+        <li>
+          <Link to="/boys-hostel" className="hover:underline">
+            Boys Hostel
+          </Link>
+        </li>
+
+        <li
+          onMouseEnter={() => setShowAntiRaggingDropdown(true)}
+          onMouseLeave={() => setShowAntiRaggingDropdown(false)}
+          className="relative"
+        >
+          <Link to="/anti-ragging/rules" className="hover:underline">
+            Anti-Ragging ▾
+          </Link>
+          {showAntiRaggingDropdown && (
+            <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-48">
+              <li>
+                <a
+                  href="/anti-ragging/committee"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Anti Ragging Committee
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/anti-ragging/rules"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Anti Ragging Rules, Regulations and Undertakings
+                </a>
+              </li>
+              
+            </ul>
+          )}
+        </li>
+       
+        <li>
           <Link to="/hostel-rules" className="hover:underline">
-            Hostel Rules
+            Rules
+          </Link>
+          </li>
+          <li>
+          <Link to="/downloads" className="hover:underline">
+            Downloads
           </Link>
         </li>
       </ul>
