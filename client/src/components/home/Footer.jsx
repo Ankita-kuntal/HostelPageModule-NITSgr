@@ -8,6 +8,7 @@ const Footer = () => {
           <a href="#" className="text-teal hover:underline">Privacy Policy</a>
           <a href="#" className="text-teal hover:underline">Terms of Service</a>
         </div>
+        </div>
       </footer>
     );
   };
