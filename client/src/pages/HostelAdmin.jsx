@@ -30,6 +30,8 @@ import shahidashraf from "../assets/images/admin/shahidashraf.png";
 import waheed from "../assets/images/admin/waheedahmad.jpg";
 import altafrather from "../assets/images/admin/altafrather.jpg";
 
+import userIcon from "../assets/images/userIcon.png";
+
 const HostelAdmin = () => {
   const location = useLocation();
 
@@ -285,21 +287,21 @@ const HallAssistantsSection = () => {
       contact: "9797263561",
       image: khursheed,
     },
-    { name: "Mr. Umer Habib", block: "", contact: "6005588252", image: "" },
+    { name: "Mr. Umer Habib", block: "", contact: "6005588252", image: userIcon, },
     {
       name: "Mr. Mansoor Ahmad",
       block: "Jhelum",
       contact: "9682500561",
       image: mansoorahmadmir,
     },
-    { name: "Mr. Yasir Rizvi", block: "", contact: "7006059229", image: "" },
+    { name: "Mr. Yasir Rizvi", block: "", contact: "7006059229", image: userIcon, },
     {
       name: "Mr. Inam ul Haq",
       block: "Mansar & Manasbal",
       contact: "9541449115",
       image: inamulhaq,
     },
-    { name: "Mr. Mohammad Aslam", block: "", contact: "7006345529", image: "" },
+    { name: "Mr. Mohammad Aslam", block: "", contact: "7006345529", image: userIcon, },
     {
       name: "Mr. Shahid Ashraf",
       block: "Jhelum Extension, C-Block & Tawi",
@@ -316,7 +318,7 @@ const HallAssistantsSection = () => {
       name: "Mr. Javaid Hussain Teli",
       block: "All Hostels",
       contact: "7051550554",
-      image: "",
+      image: userIcon,
     },
     {
       name: "Mr. Altaf Ahmad Rather",
