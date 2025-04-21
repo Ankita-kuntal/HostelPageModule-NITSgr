@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from "../assets/images/logo-black.png";
+import logo from "../assets/images/logo-white.png";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
