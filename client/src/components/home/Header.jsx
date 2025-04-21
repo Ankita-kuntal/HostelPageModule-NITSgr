@@ -9,7 +9,7 @@ const Header = () => {
       style={{ backgroundImage: `url(${campusImage})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white text-center px-4">
-        <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold mb-4 text-white text-opacity-85">Hostel - NIT Srinagar</h1>
+        <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold mb-4 text-white text-opacity-85">Halls of Residence</h1>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <ScrollLink 
             to="about-section" 
