@@ -26,8 +26,6 @@ const Home = () => {
       <div id="services-section">
         <Services />
       </div>
-
-      <Footer />
     </div>
   );
 };
