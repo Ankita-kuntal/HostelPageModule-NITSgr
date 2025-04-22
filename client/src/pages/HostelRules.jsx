@@ -1,3 +1,4 @@
+import ScrollToTopButton from "../components/ScrollToTopButton"
 const HostelRules = () => {
     return (
       <div className="p-6 px-8 md:px-24 py-6">
@@ -109,6 +110,7 @@ Any student exhibiting prohibited behavior, mentioned in this Code shall, depend
 <p className="mb-4">
 The students joining any academic program of the Institute will have to give an undertaking to the effect that he/she will comply with the provisions envisaged in this Code in letter and spirit and if it is not given by them he/she will still be bound by the provisions of this Code.
 </p>
+<ScrollToTopButton />
       </div>
     );
   };
