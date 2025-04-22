@@ -18,11 +18,14 @@ const Navbar = () => {
     <nav className="bg-teal-700 text-white text-opacity-90 p-4 flex items-center justify-between">
       <img src={logo} alt="Logo" className="h-12 w-auto" />
       <ul className="flex flex-wrap justify-end gap-4 text-sm sm:text-base font-medium">
+        {/* Home */}
         <li>
           <Link to="/" className="hover:underline">
             Home
           </Link>
         </li>
+
+        {/* Admin */}
         <li
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
@@ -68,6 +71,8 @@ const Navbar = () => {
             </ul>
           )}
         </li>
+
+        {/* Hostel */}
         <li>
           <Link to="/girls-hostel" className="hover:underline">
             Girls Hostel
@@ -79,6 +84,7 @@ const Navbar = () => {
           </Link>
         </li>
 
+        {/* Anti Ragging */}
         <li
           onMouseEnter={() => setShowAntiRaggingDropdown(true)}
           onMouseLeave={() => setShowAntiRaggingDropdown(false)}
@@ -140,13 +146,14 @@ const Navbar = () => {
           )}
         </li>
 
+        {/* Downloads */}
         <li>
           <Link to="/downloads" className="hover:underline">
             Downloads
           </Link>
         </li>
         <li>
-          {/* Contact Us Navlink */}
+          {/* Contact Us */}
           <button
             onClick={() => setShowContactModal(true)}
             className="hover:underline"
@@ -154,6 +161,12 @@ const Navbar = () => {
             Contact Us
           </button>
         </li>
+        {/* WebTeam */}
+      <li>
+        <Link to="/webteam" className="hover:underline">
+          Web Team
+        </Link>
+      </li>
       </ul>
 
       {/* Contact Us Modal */}
@@ -163,9 +176,7 @@ const Navbar = () => {
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
           onClick={handleOutsideClick}
         >
-          <div
-            className="bg-white rounded-lg shadow-lg p-6 relative max-w-lg w-full overflow-y-auto max-h-[90vh]"
-          >
+          <div className="bg-white rounded-lg shadow-lg p-6 relative max-w-lg w-full overflow-y-auto max-h-[90vh]">
             {/* Cross Button */}
             <button
               onClick={() => setShowContactModal(false)}
@@ -200,6 +211,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      
     </nav>
   );
 };

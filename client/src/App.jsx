@@ -12,6 +12,7 @@ import AntiRaggingCommittee from "./pages/AntiRaggingCommittee";
 import AntiRaggingRules from "./pages/AntiRaggingRules";
 import Downloads from './pages/Downloads';
 import HostelRulesSummary from './pages/HostelRulesSummary';
+import WebTeam from './pages/WebTeam';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/anti-ragging/rules" element={<AntiRaggingRules />} />
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/hostel-rules-summary" element={<HostelRulesSummary />} />
+          <Route path="/webteam" element={<WebTeam />} />
         </Routes>
       </div>
       {/* Footer */}

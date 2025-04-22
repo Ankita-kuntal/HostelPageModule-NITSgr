@@ -76,7 +76,7 @@ const GirlsHostel = () => {
 
   return (
     <div className="px-8 md:px-24 py-6">
-      <h2 className="text-3xl font-semibold mt-6 mb-4">Girls Hostel Information</h2>
+      <h2 className="text-3xl font-semibold mt-6 mb-4 text-navy">Girls Hostel Information</h2>
       <div className="h-1 w-20 bg-teal-500 rounded mb-3"></div>
 
       {/* Carousel */}
