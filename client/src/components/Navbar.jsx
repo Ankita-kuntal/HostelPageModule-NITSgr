@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/images/logo-white.png";
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [showContactModal, setShowContactModal] = useState(false);
+  const [showDownloadsDropdown, setShowDownloadsDropdown] = useState(false);
+  const [downloadsData, setDownloadsData] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/downloads.json")
+      .then((res) => res.json())
+      .then((data) => setDownloadsData(data))
+      .catch((err) => console.error("Error fetching downloads:", err));
+  }, []);
 
   const handleOutsideClick = (e) => {
     if (e.target.id === "modal-overlay") {
@@ -16,6 +25,7 @@ const Navbar = () => {
     <nav className="bg-teal-700 text-white text-opacity-90 p-4 flex items-center justify-between">
       <img src={logo} alt="Logo" className="h-12 w-auto" />
       <ul className="flex flex-wrap justify-end gap-4 text-sm sm:text-base font-medium">
+
         {/* Home */}
         <li>
           <Link to="/" className="hover:underline">
@@ -23,7 +33,7 @@ const Navbar = () => {
           </Link>
         </li>
 
-        {/* Hostel Administration Dropdown */}
+        {/* Hostel Administration */}
         <li
           onMouseEnter={() => setActiveDropdown("admin")}
           onMouseLeave={() => setActiveDropdown(null)}
@@ -35,22 +45,34 @@ const Navbar = () => {
           {activeDropdown === "admin" && (
             <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-48">
               <li>
-                <a href="/hostel-admin#dean-welfare" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/hostel-admin#dean-welfare"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Dean Students Welfare
                 </a>
               </li>
               <li>
-                <a href="/hostel-admin#associate-dean" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/hostel-admin#associate-dean"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Associate Dean
                 </a>
               </li>
               <li>
-                <a href="/hostel-admin#wardens" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/hostel-admin#wardens"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Wardens
                 </a>
               </li>
               <li>
-                <a href="/hostel-admin#hall-assistants" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/hostel-admin#hall-assistants"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Hall Assistants
                 </a>
               </li>
@@ -58,24 +80,28 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Hostel Info Dropdown */}
+        {/* Hostel Info */}
         <li
           onMouseEnter={() => setActiveDropdown("hostel")}
           onMouseLeave={() => setActiveDropdown(null)}
           className="relative"
         >
-          <span className="cursor-pointer hover:underline">
-            Hostel Info ▾
-          </span>
+          <span className="cursor-pointer hover:underline">Hostel Info ▾</span>
           {activeDropdown === "hostel" && (
             <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-48">
               <li>
-                <Link to="/girls-hostel" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/girls-hostel"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Girls Hostel
                 </Link>
               </li>
               <li>
-                <Link to="/boys-hostel" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/boys-hostel"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Boys Hostel
                 </Link>
               </li>
@@ -83,7 +109,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Anti Ragging Dropdown */}
+        {/* Anti-Ragging */}
         <li
           onMouseEnter={() => setActiveDropdown("antiRagging")}
           onMouseLeave={() => setActiveDropdown(null)}
@@ -95,12 +121,18 @@ const Navbar = () => {
           {activeDropdown === "antiRagging" && (
             <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-56">
               <li>
-                <a href="/anti-ragging/committee" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/anti-ragging/committee"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Anti Ragging Committee
                 </a>
               </li>
               <li>
-                <a href="/anti-ragging/rules" className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href="/anti-ragging/rules"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Anti Ragging Rules, Regulations and Undertakings
                 </a>
               </li>
@@ -108,7 +140,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Rules Dropdown */}
+        {/* Rules */}
         <li
           onMouseEnter={() => setActiveDropdown("rules")}
           onMouseLeave={() => setActiveDropdown(null)}
@@ -120,12 +152,18 @@ const Navbar = () => {
           {activeDropdown === "rules" && (
             <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-48">
               <li>
-                <Link to="/hostel-rules-summary" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/hostel-rules-summary"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Summary
                 </Link>
               </li>
               <li>
-                <Link to="/hostel-rules" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  to="/hostel-rules"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Detailed Rules
                 </Link>
               </li>
@@ -134,15 +172,60 @@ const Navbar = () => {
         </li>
 
         {/* Downloads */}
-        <li>
-          <Link to="/downloads" className="hover:underline">
-            Downloads
-          </Link>
+        {/* <li
+          onMouseEnter={() => setShowDownloadsDropdown(true)}
+          onMouseLeave={() => setShowDownloadsDropdown(false)}
+          className="relative"
+        >
+          <span className="cursor-pointer hover:underline">Downloads ▾</span>
+          {showDownloadsDropdown && (
+            <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-56">
+              {downloadsData.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li> */}
+        <li
+  onMouseEnter={() => setShowDownloadsDropdown(true)}
+  onMouseLeave={() => setShowDownloadsDropdown(false)}
+  className="relative"
+>
+  <Link to="/downloads" className="cursor-pointer hover:underline">Downloads ▾</Link>
+  {showDownloadsDropdown && (
+    <ul className="absolute top-full left-0 bg-white text-black rounded-md shadow-md z-10 w-56">
+      {downloadsData.map((item, index) => (
+        <li key={index}>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-4 py-2 hover:bg-gray-100"
+          >
+            {item.name}
+          </a>
         </li>
+      ))}
+    </ul>
+  )}
+</li>
+
 
         {/* Contact Us */}
         <li>
-          <button onClick={() => setShowContactModal(true)} className="hover:underline">
+          <button
+            onClick={() => setShowContactModal(true)}
+            className="hover:underline"
+          >
             Contact Us
           </button>
         </li>
@@ -173,13 +256,19 @@ const Navbar = () => {
             <ul className="space-y-4 text-gray-900">
               <li>
                 <strong>Dean Students Welfare:</strong> +91-6005103740,{" "}
-                <a href="mailto:deanstudentswelfare@nitsri.ac.in" className="text-teal-600 underline">
+                <a
+                  href="mailto:deanstudentswelfare@nitsri.ac.in"
+                  className="text-teal-600 underline"
+                >
                   deanstudentswelfare@nitsri.ac.in
                 </a>
               </li>
               <li>
                 <strong>Associate Dean:</strong> +91-8986948677,{" "}
-                <a href="mailto:shashikantkumar@nitsri.ac.in" className="text-teal-600 underline">
+                <a
+                  href="mailto:shashikantkumar@nitsri.ac.in"
+                  className="text-teal-600 underline"
+                >
                   shashikantkumar@nitsri.ac.in
                 </a>
               </li>
