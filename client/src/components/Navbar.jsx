@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/images/logo-white.png";
+import instituteLogo from "../assets/images/logo-name.png";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -8,7 +9,12 @@ const Navbar = () => {
 
   return (
     <nav className="bg-teal-700 text-white text-opacity-90 p-4 flex items-center justify-between">
+      <div className="flex items-center">
       <img src={logo} alt="Logo" className="h-12 w-auto" />
+      <a href="https://www.nitsri.ac.in" target="_blank" rel="noopener noreferrer">
+          <img src={instituteLogo} alt="NIT Srinagar" className="h-10 w-auto ml-4" />
+      </a>
+      </div>
       <ul className="flex flex-wrap justify-end gap-4 text-sm sm:text-base font-medium">
         <li>
           <Link to="/" className="hover:underline">
