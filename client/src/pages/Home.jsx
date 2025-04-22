@@ -3,6 +3,7 @@ import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";
 import About from "../components/home/About";
 import Services from "../components/home/Services";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import React from "react";
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
       <div id="services-section">
         <Services />
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };

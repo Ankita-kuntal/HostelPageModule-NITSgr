@@ -1,5 +1,5 @@
 import React from "react";
-
+import ScrollToTopButton from "../components/ScrollToTopButton"
 const AntiRaggingCommittee = () => {
   return (
     <div className="p-6 px-8 md:px-24 py-6">
@@ -331,6 +331,7 @@ const AntiRaggingCommittee = () => {
             www.ugc.ac.in
           </a>
         </p>
+        <ScrollToTopButton />
       </div>
     </div>
   );

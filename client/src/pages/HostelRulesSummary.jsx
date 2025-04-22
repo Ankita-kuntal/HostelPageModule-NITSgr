@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
 
 const HostelRulesSummary = () => {
   return (
@@ -9,7 +10,7 @@ const HostelRulesSummary = () => {
       <div className="space-y-6">
         {/* General Responsibility */}
         <section>
-          <h2 className="text-2xl font-semibold  mb-2">General Responsibility</h2>
+          <h2 className="text-2xl font-semibold mb-2">General Responsibility</h2>
           <p className="text-gray-700">
             Every student must know and follow the Conduct and Disciplinary Code from day one.
           </p>
@@ -20,7 +21,7 @@ const HostelRulesSummary = () => {
 
         {/* I. Student Responsibilities */}
         <section>
-          <h2 className="text-2xl font-semibold mb-2"> I. Student Responsibilities</h2>
+          <h2 className="text-2xl font-semibold mb-2">I. Student Responsibilities</h2>
           <ul className="list-disc pl-6 text-gray-700">
             <li>Behave respectfully with staff, elders, and peers.</li>
             <li>Dress decently (no offensive prints).</li>
@@ -31,7 +32,7 @@ const HostelRulesSummary = () => {
 
         {/* II. Student Behavior Guidelines */}
         <section>
-          <h2 className="text-2xl font-semibold  mb-2">II. Student Behavior Guidelines</h2>
+          <h2 className="text-2xl font-semibold mb-2">II. Student Behavior Guidelines</h2>
 
           <h3 className="text-xl font-semibold text-gray-600 mt-4">Hostel Living</h3>
           <ul className="list-disc pl-6 text-gray-700">
@@ -70,7 +71,7 @@ const HostelRulesSummary = () => {
 
         {/* III. Disciplinary Sanctions */}
         <section>
-          <h2 className="text-2xl font-semibold  mb-2"> III. Disciplinary Sanctions</h2>
+          <h2 className="text-2xl font-semibold mb-2">III. Disciplinary Sanctions</h2>
           <h3 className="text-xl font-semibold text-gray-500">Minor:</h3>
           <ul className="list-disc pl-6 text-gray-700">
             <li>Warning or written apology.</li>
@@ -83,7 +84,7 @@ const HostelRulesSummary = () => {
 
         {/* IV. Functionaries Involved */}
         <section>
-          <h2 className="text-2xl font-semibold  mb-2"> IV. Functionaries Involved</h2>
+          <h2 className="text-2xl font-semibold mb-2">IV. Functionaries Involved</h2>
           <ul className="list-disc pl-6 text-gray-700">
             <li>Warden & Associate Dean: Handle hostel-level discipline.</li>
             <li>Dean Students Welfare: Oversees actions and reports to the Director.</li>
@@ -93,12 +94,15 @@ const HostelRulesSummary = () => {
 
         {/* V. Undertaking */}
         <section>
-          <h2 className="text-2xl font-semibold  mb-2"> V. Undertaking</h2>
+          <h2 className="text-2xl font-semibold mb-2">V. Undertaking</h2>
           <p className="text-gray-700">
             Students must sign an undertaking to follow the code. Even without signing, they're still bound by it.
           </p>
         </section>
       </div>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 };
