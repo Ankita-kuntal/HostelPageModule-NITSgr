@@ -9,7 +9,6 @@ const teamMembers = [
     funFact: "Loves Full-Stack development & chai ☕",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
-    phone: "+91-8074926409",
     linkedin: "https://www.linkedin.com/in/asmasid11", 
     github: "https://github.com/AsmaSid11",
   },
@@ -20,7 +19,6 @@ const teamMembers = [
     funFact: "Cracks code faster than you can say recursion 🔁",
     email: "2023nitsgr189@nitsri.ac.in",
     enrollment: "2023BCSE022",
-    phone: "+91-7006335662",
     linkedin: "https://www.linkedin.com/in/harshita-dubey-bb9168286", 
     github: "https://github.com/Hash-D25",
   },
@@ -31,7 +29,6 @@ const teamMembers = [
     funFact: "Has an eye for design and pixels 🎨",
     email: "2023nitsgr153@nitsri.ac.in",
     enrollment: "2023BITE007",
-    phone: "+91-600550968",
     linkedin: "https://www.linkedin.com/in/ankita-kuntal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", 
     github: "https://github.com/ankita",
   },
@@ -64,7 +61,6 @@ const WebTeam = () => {
             <div className="text-sm text-gray-700 text-center mb-3">
               <p><strong>Email:</strong> <a href={`mailto:${member.email}`} className="text-teal-700 hover:underline">{member.email}</a></p>
               <p><strong>Enrollment:</strong> {member.enrollment}</p>
-              <p><strong>Phone:</strong> {member.phone}</p>
             </div>
             <div className="flex gap-4 text-xl text-teal-700 mt-2">
               <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-teal-900">
