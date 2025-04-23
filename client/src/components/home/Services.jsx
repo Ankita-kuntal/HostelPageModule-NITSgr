@@ -8,18 +8,21 @@ const servicesData = [
     desc: "Meet the hostel incharge and administrative team of NIT Srinagar.",
     link: "/hostel-admin",
     label: "View Administration",
+    image:pic
   },
   {
     title: "Girls Hostel",
     desc: "Find details about capacity, facilities, rules and images of the Girls Hostel.",
     link: "/girls-hostel",
     label: "View Girls Hostel",
+    image:"girls.jpg"
   },
   {
     title: "Boys Hostel",
     desc: "Find details about capacity, facilities, rules and images of the Boys Hostel.",
     link: "/boys-hostel",
     label: "View Boys Hostel",
+    image:"boys.jpg"
   },
 ];
 
@@ -38,7 +41,7 @@ const Services = () => {
               className="bg-navy text-white border border-navy p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300 h-full"
             >
               <img
-                src={pic}
+                src={card.image}
                 alt="Hostel"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
