@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
 
 import senior from "../assets/images/senior.jpg";
 import junior from "../assets/images/senior.jpg";
@@ -9,11 +10,9 @@ import ngh from "../assets/images/senior.jpg";
 // Carousel Component for Modal
 const ModalCarousel = ({ image, blockName }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  // For demonstration, create multiple copies of the same image
-  // In a real scenario, you would have multiple different photos of the same hostel
+
   const sameTypeImages = [image, image, image];
-  
+
   const nextImage = (e) => {
     e.stopPropagation();
     setCurrentIndex((prevIndex) => (prevIndex + 1) % sameTypeImages.length);
@@ -79,8 +78,6 @@ const Modal = ({ block, isOpen, onClose }) => {
           <h3 className="text-2xl font-bold mb-2">{block.name}</h3>
           <div className="h-1 w-20 bg-teal-500 rounded mb-4"></div>
           <p className="text-gray-700 mb-4">{block.desc}</p>
-          
-          {/* Additional Details */}
           <div className="mt-4 bg-gray-100 p-4 rounded-lg">
             <h4 className="font-semibold mb-2">Facilities:</h4>
             <ul className="list-disc list-inside space-y-1">
@@ -90,8 +87,6 @@ const Modal = ({ block, isOpen, onClose }) => {
               <li>Cleaning Services</li>
             </ul>
           </div>
-          
-          {/* Additional content to demonstrate scrolling */}
           <div className="mt-4">
             <h4 className="font-semibold mb-2">Hostel Rules:</h4>
             <ol className="list-decimal list-inside space-y-1">
@@ -102,14 +97,12 @@ const Modal = ({ block, isOpen, onClose }) => {
               <li>Maintain noise levels that do not disturb others.</li>
             </ol>
           </div>
-          
           <div className="mt-4">
             <h4 className="font-semibold mb-2">Contact Information:</h4>
             <p>Warden: Dr. Sharma</p>
-            <p>Email: warden.{block.name.split(' ')[0].toLowerCase()}@nitsri.ac.in</p>
+            <p>Email: warden.{block.name.split(" ")[0].toLowerCase()}@nitsri.ac.in</p>
             <p>Phone: +91-XXXXXXXXXX</p>
           </div>
-          
           <button
             onClick={onClose}
             className="mt-6 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"
@@ -188,7 +181,7 @@ const GirlsHostel = () => {
     {
       name: "New Girls Hostel",
       image: ngh,
-      desc: "This Block is used for 2nd year students, equipped with modern amenities and peaceful surroundings. It accomodates 5 students per room.",
+      desc: "This Block is used for 2nd year students, equipped with modern amenities and peaceful surroundings. It accommodates 5 students per room.",
     },
     {
       name: "L Block",
@@ -247,7 +240,7 @@ const GirlsHostel = () => {
               <h4 className="text-xl font-semibold mb-1">{block.name}</h4>
               <div className="h-1 w-20 bg-teal-500 rounded mb-3"></div>
               <p>{block.desc}</p>
-              <button 
+              <button
                 className="mt-2 text-teal-600 font-medium hover:underline"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -263,12 +256,11 @@ const GirlsHostel = () => {
 
       {/* Modal for displaying hostel details */}
       {selectedBlock && (
-        <Modal 
-          block={selectedBlock} 
-          isOpen={isModalOpen} 
-          onClose={closeModal} 
-        />
+        <Modal block={selectedBlock} isOpen={isModalOpen} onClose={closeModal} />
       )}
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 };
