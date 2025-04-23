@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
 
 const Downloads = () => {
   const [downloads, setDownloads] = useState([]);
@@ -28,6 +29,9 @@ const Downloads = () => {
           </li>
         ))}
       </ul>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 };
