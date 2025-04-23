@@ -1,0 +1,210 @@
+{
+  "dean": {
+    "id": "dean-welfare",
+    "image": "/assets/images/admin/dsw.png",
+    "title": "Dean Students Welfare",
+    "name": "Dr. Mohammad Abid Bazaz",
+    "designation": "Professor, Department of Electrical Engineering",
+    "email": "deanstudentswelfare@nitsri.ac.in",
+    "contact": "+91-6005103740"
+  },
+  "associateDean": {
+    "id": "associate-dean",
+    "image": "/assets/images/admin/adsw.png",
+    "title": "Associate Dean Students Welfare",
+    "name": "Dr. Shashi Kant Kumar",
+    "designation": "Assistant Professor: Department of Chemical Engineering",
+    "email": "shashikantkumar@nitsri.ac.in",
+    "contact": "+91-8986948677"
+  },
+
+  "wardens": [
+    {
+      "name": "Dr. Janibul Bashir",
+      "department": "IT Engineering",
+      "block": "Indus",
+      "email": "janibbashir@nitsri.ac.in",
+      "contact": "8825099229",
+      "image": "/assets/images/admin/janib.jpg"
+    },
+    {
+      "name": "Dr. Shakeel Ahmad Waseem",
+      "department": "Civil Engineering",
+      "block": "Chenab",
+      "email": "shakeelahmad@nitsri.ac.in",
+      "contact": "7889673358",
+      "image": "/assets/images/admin/shakeelwaseem.jpeg"
+    },
+    {
+      "name": "Dr. Pramod Kumar Yadav",
+      "department": "CS Engineering",
+      "block": ["Mansar", " Manasbal"],
+      "email": "pramod.kumar@nitsri.ac.in",
+      "contact": "9411407432",
+      "image": "/assets/images/admin/pramodkumar.jpg"
+    },
+    {
+      "name": "Dr. Ashok Kumar",
+      "department": "EC Engineering",
+      "block": "Tawi",
+      "email": "ashok.kumar@nitsri.ac.in",
+      "contact": "8102350942",
+      "image": "/assets/images/admin/ashokkumar.jpg"
+    },
+    {
+      "name": "Dr. Asadur Rahman",
+      "department": "Electrical Engineering",
+      "block": "Jhelum Extension",
+      "email": "asadur@nitsri.ac.in",
+      "contact": "9957497127",
+      "image": "/assets/images/admin/asadurrahman.jpg"
+    },
+    {
+      "name": "Dr. Srikant S Maktedar",
+      "department": "Chemical Engineering",
+      "block": "Chenab",
+      "email": "shrikant@nitsri.ac.in",
+      "contact": "9978500944",
+      "image": "/assets/images/admin/shrikantmaktedar.png"
+    },
+    {
+      "name": "Dr. Amandeep Singh",
+      "department": "EC Engineering",
+      "block": "Jhelum",
+      "email": "amansingh@nitsri.ac.in",
+      "contact": "7508250907",
+      "image": "/assets/images/admin/amandeepsingh.jpg"
+    },
+    {
+      "name": "Dr. Munir Ahmad Nayak",
+      "department": "Civil Engineering",
+      "block": "Jhelum",
+      "email": "munir.nayak@nitsri.ac.in",
+      "contact": "9993815818",
+      "image": "/assets/images/admin/munirnayak.png"
+    },
+    {
+      "name": "Dr. Noor Zaman Khan",
+      "department": "Mechanical Engineering",
+      "block": ["C-Block", "Indus"],
+      "email": "noorzaman@nitsri.ac.in",
+      "contact": "9891674435",
+      "image": "/assets/images/admin/noorzamankhan.jpg"
+    },
+    {
+      "name": "Dr. Prabal Verma",
+      "department": "IT Engineering",
+      "block": ["Mansar", "Manasbal"],
+      "email": "prabal.verma@nitsri.ac.in",
+      "contact": "9419223663",
+      "image": "/assets/images/admin/prabalverma.jpg"
+    },
+    {
+      "name": "Dr. Mukund Dutt Sharma",
+      "department": "Mechanical Engineering",
+      "block": "Indus",
+      "email": "mukund.sharma@nitsri.ac.in",
+      "contact": "9882241895",
+      "image": "/assets/images/admin/mukunddutt.jpeg"
+    },
+    {
+      "name": "Dr. Fatima Jalid",
+      "department": "Chemical Engineering",
+      "block": "Girls Hostel",
+      "email": "fatima@nitsri.ac.in",
+      "contact": "9990795522",
+      "image": "/assets/images/admin/fatimajalid.jpeg"
+    },
+    {
+      "name": "Dr. Janani L",
+      "department": "Civil Engineering",
+      "block": "Girls Hostel",
+      "email": "janani@nitsri.ac.in",
+      "contact": "944691502",
+      "image": "/assets/images/admin/janani.jpeg"
+    },
+    {
+      "name": "Dr. Nitika Kundan",
+      "department": "MMED",
+      "block": "Girls Hostel",
+      "email": "nitika.kundan@nitsri.ac.in",
+      "contact": "6006191446",
+      "image": "/assets/images/admin/nitikakundan.jpg"
+    }
+  ],
+
+  "hallAssistants": [
+    {
+      "name": "Mr. Showkat Siddiqui",
+      "block": "Indus",
+      "contact": "6006794058",
+      "image": "/assets/images/admin/showkatsidiq.png"
+    },
+    {
+      "name": "Mr. Arshid Ismail Bhat",
+      "block": "",
+      "contact": "9086863620",
+      "image": "/assets/images/admin/arshid.png"
+    },
+    {
+      "name": "Mr. Khurshid Ahmad",
+      "block": "Chenab",
+      "contact": "9797263561",
+      "image": "/assets/images/admin/khursheed.png"
+    },
+    {
+      "name": "Mr. Umer Habib",
+      "block": "",
+      "contact": "6005588252",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Mr. Mansoor Ahmad",
+      "block": "Jhelum",
+      "contact": "9682500561",
+      "image": "/assets/images/admin/mansoorahmadmir.png"
+    },
+    {
+      "name": "Mr. Yasir Rizvi",
+      "block": "",
+      "contact": "7006059229",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Mr. Inam ul Haq",
+      "block": ["Mansar" , "Manasbal"],
+      "contact": "9541449115",
+      "image": "/assets/images/admin/Inamulhaq.png"
+    },
+    {
+      "name": "Mr. Mohammad Aslam",
+      "block": "",
+      "contact": "7006345529",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Mr. Shahid Ashraf",
+      "block": ["Jhelum Extension", "C-Block" , "Tawi"],
+      "contact": "7051786578",
+      "image": "/assets/images/admin/shahidashraf.png"
+    },
+    {
+      "name": "Mr. Waheed Ahmad",
+      "block": "",
+      "contact": "9797459593",
+      "image": "/assets/images/admin/waheedahmad.jpg"
+    },
+    {
+      "name": "Mr. Javaid Hussain Teli",
+      "block": "All Hostels",
+      "contact": "7051550554",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Mr. Altaf Ahmad Rather",
+      "block": "",
+      "contact": "8899026742",
+      "image": "/assets/images/admin/altafrather.jpg"
+    }
+  ]
+}
