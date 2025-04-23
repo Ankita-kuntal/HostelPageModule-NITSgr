@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-navy">
-      {/* <Header /> */}
+      <Header />
 
       {/* About Section */}
       <div id="about-section">

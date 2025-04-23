@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import userIcon from "../assets/images/userIcon.png";
+import userIcon from "/assets/images/userIcon.png";
 import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
 
 const teamMembers = [
@@ -7,7 +7,7 @@ const teamMembers = [
     name: "Asma Siddiqui",
     role: "Web Developer",
     image: userIcon,
-    funFact: "In the world of code, chai is my constant companion ☕",
+    funFact: "Powered by chai, driven by code ☕",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
     linkedin: "https://www.linkedin.com/in/asmasid11",
