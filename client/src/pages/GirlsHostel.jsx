@@ -6,7 +6,123 @@ import lhostel from "../assets/images/senior.jpg";
 import ahostel from "../assets/images/senior.jpg";
 import ngh from "../assets/images/senior.jpg";
 
-// Carousel Component
+// Carousel Component for Modal
+const ModalCarousel = ({ image, blockName }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // For demonstration, create multiple copies of the same image
+  // In a real scenario, you would have multiple different photos of the same hostel
+  const sameTypeImages = [image, image, image];
+  
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sameTypeImages.length);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + sameTypeImages.length) % sameTypeImages.length
+    );
+  };
+
+  return (
+    <div className="relative w-full h-48">
+      <img
+        src={sameTypeImages[currentIndex]}
+        alt={`${blockName} - Image ${currentIndex + 1}`}
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={prevImage}
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70"
+      >
+        ←
+      </button>
+      <button
+        onClick={nextImage}
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70"
+      >
+        →
+      </button>
+      <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
+        {sameTypeImages.map((_, idx) => (
+          <div
+            key={idx}
+            className={`w-2 h-2 rounded-full ${
+              idx === currentIndex ? "bg-white" : "bg-gray-400"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Modal Component for Popup
+const Modal = ({ block, isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col overflow-hidden">
+        <div className="relative">
+          <ModalCarousel image={block.image} blockName={block.name} />
+          <button
+            onClick={onClose}
+            className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70"
+          >
+            ✕
+          </button>
+        </div>
+        <div className="p-6 overflow-y-auto flex-grow">
+          <h3 className="text-2xl font-bold mb-2">{block.name}</h3>
+          <div className="h-1 w-20 bg-teal-500 rounded mb-4"></div>
+          <p className="text-gray-700 mb-4">{block.desc}</p>
+          
+          {/* Additional Details */}
+          <div className="mt-4 bg-gray-100 p-4 rounded-lg">
+            <h4 className="font-semibold mb-2">Facilities:</h4>
+            <ul className="list-disc list-inside space-y-1">
+              <li>WiFi Connectivity</li>
+              <li>Common Room</li>
+              <li>Water Coolers</li>
+              <li>Cleaning Services</li>
+            </ul>
+          </div>
+          
+          {/* Additional content to demonstrate scrolling */}
+          <div className="mt-4">
+            <h4 className="font-semibold mb-2">Hostel Rules:</h4>
+            <ol className="list-decimal list-inside space-y-1">
+              <li>Students must follow the entry/exit timings strictly.</li>
+              <li>Cooking in rooms is not permitted.</li>
+              <li>Visitors must register at the reception.</li>
+              <li>Property damage will be charged accordingly.</li>
+              <li>Maintain noise levels that do not disturb others.</li>
+            </ol>
+          </div>
+          
+          <div className="mt-4">
+            <h4 className="font-semibold mb-2">Contact Information:</h4>
+            <p>Warden: Dr. Sharma</p>
+            <p>Email: warden.{block.name.split(' ')[0].toLowerCase()}@nitsri.ac.in</p>
+            <p>Phone: +91-XXXXXXXXXX</p>
+          </div>
+          
+          <button
+            onClick={onClose}
+            className="mt-6 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Carousel Component for main page
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -44,6 +160,18 @@ const Carousel = ({ images }) => {
 };
 
 const GirlsHostel = () => {
+  const [selectedBlock, setSelectedBlock] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (block) => {
+    setSelectedBlock(block);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const images = [senior, junior, ngh, lhostel, ahostel];
 
   const blocks = [
@@ -107,7 +235,8 @@ const GirlsHostel = () => {
         {blocks.map((block, index) => (
           <div
             key={index}
-            className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center"
+            className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center cursor-pointer hover:bg-gray-200 transition-colors"
+            onClick={() => openModal(block)}
           >
             <img
               src={block.image}
@@ -118,10 +247,28 @@ const GirlsHostel = () => {
               <h4 className="text-xl font-semibold mb-1">{block.name}</h4>
               <div className="h-1 w-20 bg-teal-500 rounded mb-3"></div>
               <p>{block.desc}</p>
+              <button 
+                className="mt-2 text-teal-600 font-medium hover:underline"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openModal(block);
+                }}
+              >
+                View Details
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal for displaying hostel details */}
+      {selectedBlock && (
+        <Modal 
+          block={selectedBlock} 
+          isOpen={isModalOpen} 
+          onClose={closeModal} 
+        />
+      )}
     </div>
   );
 };
