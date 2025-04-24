@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-teal-800 text-white text-opacity-90 p-4">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+      <div className="container mx-auto flex flex-wrap items-center justify-end">
         {/* Logo and Institute Logo */}
         {/* <div className="flex items-center space-x-4">
           <img src={logo} alt="Logo" className="h-12 w-auto" />
