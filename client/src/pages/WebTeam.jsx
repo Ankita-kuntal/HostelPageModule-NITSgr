@@ -32,7 +32,7 @@ const teamMembers = [
     enrollment: "2023BITE007",
     linkedin:
       "https://www.linkedin.com/in/ankita-kuntal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    github: "https://github.com/ankita",
+    github: "https://github.com/Ankita-kuntal",
   },
   {
     name: "Ikjot Kour",

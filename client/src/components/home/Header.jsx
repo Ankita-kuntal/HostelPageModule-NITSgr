@@ -5,7 +5,7 @@ import campusImage from '../../assets/images/campus.jpg';
 const Header = () => {
   return (
     <section
-      className="relative w-full h-[280px] bg-cover bg-center bg-no-repeat"  
+      className="relative w-full h-[230px] bg-cover bg-center bg-no-repeat"  
       style={{ backgroundImage: `url(${campusImage})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white text-center px-4">
