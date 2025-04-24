@@ -38,7 +38,7 @@
     {
       "name": "Dr. Pramod Kumar Yadav",
       "department": "CS Engineering",
-      "block": ["Mansar", " Manasbal"],
+      "block": ["Mansar & Manasbal"],
       "email": "pramod.kumar@nitsri.ac.in",
       "contact": "9411407432",
       "image": "/assets/images/admin/pramodkumar.jpg"
@@ -86,7 +86,7 @@
     {
       "name": "Dr. Noor Zaman Khan",
       "department": "Mechanical Engineering",
-      "block": ["C-Block", "Indus"],
+      "block": ["C-Block"],
       "email": "noorzaman@nitsri.ac.in",
       "contact": "9891674435",
       "image": "/assets/images/admin/noorzamankhan.jpg"
@@ -94,7 +94,7 @@
     {
       "name": "Dr. Prabal Verma",
       "department": "IT Engineering",
-      "block": ["Mansar", "Manasbal"],
+      "block": ["Mansar & Manasbal"],
       "email": "prabal.verma@nitsri.ac.in",
       "contact": "9419223663",
       "image": "/assets/images/admin/prabalverma.jpg"
@@ -172,7 +172,7 @@
     },
     {
       "name": "Mr. Inam ul Haq",
-      "block": ["Mansar" , "Manasbal"],
+      "block": ["Mansar & Manasbal"],
       "contact": "9541449115",
       "image": "/assets/images/admin/Inamulhaq.png"
     },
