@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const HostelAdmin = () => {
   const location = useLocation();
@@ -163,6 +164,7 @@ const CardGrid = ({ data, type }) => (
         </div>
       );
     })}
+    <ScrollToTopButton />
   </div>
 );
 
