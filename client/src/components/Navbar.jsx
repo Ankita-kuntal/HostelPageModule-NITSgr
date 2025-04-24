@@ -25,14 +25,14 @@ const Navbar = () => {
 
   return (
     <nav className="bg-teal-700 text-white text-opacity-90 p-4">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+      <div className="container mx-auto flex flex-wrap items-center justify-end ">
         {/* Logo and Institute Logo */}
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <img src={logo} alt="Logo" className="h-12 w-auto" />
           <a href="https://www.nitsri.ac.in" target="_blank" rel="noopener noreferrer">
             <img src={instituteLogo} alt="NIT Srinagar" className="h-10 w-auto" />
           </a>
-        </div>
+        </div> */}
 
         {/* Hamburger Toggle Button (Visible on small screens) */}
         <button

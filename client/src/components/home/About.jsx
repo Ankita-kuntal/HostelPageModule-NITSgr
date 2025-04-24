@@ -22,7 +22,7 @@ const About = () => {
           </div>
 
           {/* Text Content */}
-          <div className="bg-gradient-to-br from-white to-slate-100 text-navy p-6 sm:p-8 lg:p-10 space-y-5">
+          <div className="bg-gradient-to-br from-white to-slate-100 text-navy p-6 sm:p-8 lg:p-10 space-y-5 text-justify">
             <p className="text-lg leading-relaxed font-bold">Dear Students,</p>
             <p className="text-base leading-relaxed">
               It is with great enthusiasm and a deep sense of responsibility that I take on the role of Dean Students Welfare at NIT Srinagar. Our students are the heart of this institution and my foremost priority is to ensure your well-being, growth, and holistic development.

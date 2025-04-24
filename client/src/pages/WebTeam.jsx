@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import userIcon from "/assets/images/userIcon.png";
-import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
+import ScrollToTopButton from "../components/ScrollToTopButton"; 
 
 const teamMembers = [
   {
@@ -34,6 +34,17 @@ const teamMembers = [
       "https://www.linkedin.com/in/ankita-kuntal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/ankita",
   },
+  {
+    name: "Ikjot Kour",
+    role: "Web Developer",
+    image: userIcon,
+    funFact: "Hi hello!✌",
+    email: "2023nitsrg181@nitsri.ac.in",
+    enrollment: "2023BITE020",
+    linkedin:
+      "https://www.linkedin.com/in/ikjot-kour-0994a730b",
+    github: "https://github.com/ikjotkour27",
+  },
 ];
 
 const WebTeam = () => {
@@ -43,7 +54,7 @@ const WebTeam = () => {
       <div className="h-1 w-20 bg-teal-500 rounded mb-8"></div>
 
       <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-        This website is designed, developed, and maintained by a team of dedicated students at NIT Srinagar. We aim to
+        This website is designed, developed, and maintained by Gaash Team at NIT Srinagar. We aim to
         ensure that all hostel-related information is accurate, up-to-date, and easily accessible.
       </p>
 
