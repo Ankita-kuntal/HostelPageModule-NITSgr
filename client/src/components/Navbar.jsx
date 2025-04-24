@@ -24,8 +24,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-teal-700 text-white text-opacity-90 p-4">
-      <div className="container mx-auto flex flex-wrap items-center justify-end ">
+    <nav className="bg-teal-800 text-white text-opacity-90 p-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Logo and Institute Logo */}
         {/* <div className="flex items-center space-x-4">
           <img src={logo} alt="Logo" className="h-12 w-auto" />
@@ -42,7 +42,11 @@ const Navbar = () => {
           <span className="text-white">☰</span> {/* Hamburger icon */}
         </button>
 
-        <div className={`${isMobileMenuOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
+        <div
+          className={`${
+            isMobileMenuOpen ? "block" : "hidden"
+          } w-full md:block md:w-auto`}
+        >
           <ul className="flex flex-col md:flex-row md:space-x-4 md:mt-0 text-sm sm:text-base font-medium">
             {/* Home */}
             <li>
@@ -57,7 +61,10 @@ const Navbar = () => {
               onMouseLeave={() => setActiveDropdown(null)}
               className="relative"
             >
-              <Link to="/hostel-admin" className="hover:underline block py-2 md:py-0">
+              <Link
+                to="/hostel-admin"
+                className="hover:underline block py-2 md:py-0"
+              >
                 Hostel Administration ▾
               </Link>
               {activeDropdown === "admin" && (
@@ -104,7 +111,9 @@ const Navbar = () => {
               onMouseLeave={() => setActiveDropdown(null)}
               className="relative"
             >
-              <span className="cursor-pointer hover:underline block py-2 md:py-0">Hostel Info ▾</span>
+              <span className="cursor-pointer hover:underline block py-2 md:py-0">
+                Hostel Info ▾
+              </span>
               {activeDropdown === "hostel" && (
                 <ul className="absolute left-0 md:left-auto md:right-0 bg-white text-black rounded-md shadow-md z-10 w-48">
                   <li>
@@ -133,7 +142,10 @@ const Navbar = () => {
               onMouseLeave={() => setActiveDropdown(null)}
               className="relative"
             >
-              <Link to="/anti-ragging/rules" className="hover:underline block py-2 md:py-0">
+              <Link
+                to="/anti-ragging/rules"
+                className="hover:underline block py-2 md:py-0"
+              >
                 Anti-Ragging ▾
               </Link>
               {activeDropdown === "antiRagging" && (
@@ -164,7 +176,10 @@ const Navbar = () => {
               onMouseLeave={() => setActiveDropdown(null)}
               className="relative"
             >
-              <Link to="/hostel-rules" className="hover:underline block py-2 md:py-0">
+              <Link
+                to="/hostel-rules"
+                className="hover:underline block py-2 md:py-0"
+              >
                 Rules ▾
               </Link>
               {activeDropdown === "rules" && (
@@ -195,7 +210,10 @@ const Navbar = () => {
               onMouseLeave={() => setShowDownloadsDropdown(false)}
               className="relative"
             >
-              <Link to="/downloads" className="cursor-pointer hover:underline block py-2 md:py-0">
+              <Link
+                to="/downloads"
+                className="cursor-pointer hover:underline block py-2 md:py-0"
+              >
                 Downloads ▾
               </Link>
               {showDownloadsDropdown && (
@@ -228,7 +246,10 @@ const Navbar = () => {
 
             {/* Web Team */}
             <li>
-              <Link to="/webteam" className="hover:underline block py-2 md:py-0">
+              <Link
+                to="/webteam"
+                className="hover:underline block py-2 md:py-0"
+              >
                 Web Team
               </Link>
             </li>
