@@ -25,23 +25,21 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Header with logo and institute name */}
       <div className="bg-teal-800 text-white text-opacity-90 pt-2 px-4">
         <div className="container mx-auto flex flex-col items-center">
           <div className="flex w-full justify-between items-center mb-4">
-            {/* Logo with margin from left */}
             <div className="flex-shrink-0 ml-8">
-              <img src={logo} alt="Logo" className="h-24 w-auto" />
+              <a href="https://nitsri.ac.in" target="_blank" rel="noopener noreferrer">
+                <img src={logo} alt="Logo" className="h-24 w-auto cursor-pointer" />
+              </a>
             </div>
             
-            {/* Institute Name in the middle (larger) */}
             <div className="flex flex-col items-center text-center flex-1">
-              <h1 className="text-2xl md:text-3xl font-bold">भारतीय प्रौद्योगिकी संस्थान श्रीनगर</h1>
-              <h2 className="text-2xl md:text-3xl font-bold">National Institute of Technology Srinagar</h2>
+              <h1 className="text-2xl md:text-3xl font-bold">राष्ट्रीय प्रौद्योगिकी संस्थान श्रीनगर</h1>
+              <h2 className="text-2xl md:text-3xl font-bold pt-1">National Institute of Technology Srinagar</h2>
               {/* <h3 className="text-lg md:text-xl">Hostel</h3> */}
             </div>
-            
-            {/* Empty div for spacing */}
+
             <div className="flex-shrink-0 w-16"></div>
           </div>
         </div>
