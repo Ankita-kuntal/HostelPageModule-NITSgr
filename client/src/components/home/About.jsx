@@ -11,15 +11,15 @@ const About = () => {
 
       {/* Added a container with enhanced box effect for the entire content */}
       <div className="max-w-7xl w-full bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12"> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
           {/* Image */}
-          {/* <div className="flex justify-center p-6 md:p-10">
+          <div className="flex justify-center p-6 md:p-10">
             <img
               src={pic}
               alt="Dean's Office"
               className="rounded-2xl shadow-lg w-full max-w-full sm:max-w-sm md:max-w-md h-auto object-cover transition-transform duration-300 hover:scale-105"
             />
-          </div> */}
+          </div>
 
           {/* Text Content */}
           <div className="bg-gradient-to-br from-white to-slate-100 text-navy p-6 sm:p-8 lg:p-10 space-y-5 text-justify">
@@ -43,7 +43,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </section>
   );
 };
