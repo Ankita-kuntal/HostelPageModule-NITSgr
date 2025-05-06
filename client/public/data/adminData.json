@@ -184,7 +184,7 @@
     },
     {
       "name": "Mr. Shahid Ashraf",
-      "block": ["Jhelum Extension", "C-Block" , "Tawi"],
+      "block": ["Jhelum Extension", "C-Block", "Tawi"],
       "contact": "7051786578",
       "image": "/assets/images/admin/shahidashraf.png"
     },
@@ -205,6 +205,60 @@
       "block": "",
       "contact": "8899026742",
       "image": "/assets/images/admin/altafrather.jpg"
+    },
+    {
+      "name": "Miss Gulsiona Baneo",
+      "block": "Girls Hostel",
+      "contact": "9541029327",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Mahjabeena Akhter",
+      "block": "Girls Hostel",
+      "contact": "7780919930 / 8899504391",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Nelofer Jan",
+      "block": "Girls Hostel",
+      "contact": "6005341154",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Mehak Mehraj",
+      "block": "Girls Hostel",
+      "contact": "6006385951",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Roziya Nabi",
+      "block": "Girls Hostel",
+      "contact": "6006659701",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Saika Shabir",
+      "block": "Girls Hostel",
+      "contact": "7780916407",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Roma Shaheen",
+      "block": "Girls Hostel",
+      "contact": "9541316672",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Firdousa Bilal",
+      "block": "Girls Hostel",
+      "contact": "9541807962",
+      "image": "/assets/images/userIcon.png"
+    },
+    {
+      "name": "Miss Iqra Farooq",
+      "block": "Girls Hostel",
+      "contact": "8082673626",
+      "image": "/assets/images/userIcon.png"
     }
   ]
 }
