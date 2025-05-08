@@ -1,5 +1,5 @@
-import { useState } from "react";
-import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
+import { useState, useEffect } from "react";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 // Image Imports
 import indus from "../assets/images/indus.jpg";
@@ -14,11 +14,7 @@ import manasbal from "../assets/images/manasbal.jpg";
 // Carousel Component for Modal
 const ModalCarousel = ({ image, blockName }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-// For demonstration, create multiple copies of the same image
-  // In a real scenario, you would have multiple different photos of the same hostel
-
-// For demonstration, create multiple copies of the same image
-  // In a real scenario, you would have multiple different photos of the same hostel
+  // For demonstration, create multiple copies of the same image
   const sameTypeImages = [image, image, image];
 
   const nextImage = (e) => {
@@ -67,7 +63,7 @@ const ModalCarousel = ({ image, blockName }) => {
 };
 
 // Modal Component for Popup
-const Modal = ({ block, isOpen, onClose }) => {
+const Modal = ({ block, isOpen, onClose, wardenInfo, hallAssistantInfo }) => {
   if (!isOpen) return null;
 
   return (
@@ -98,22 +94,35 @@ const Modal = ({ block, isOpen, onClose }) => {
             </ul>
           </div>
 
-          {/* Additional content to demonstrate scrolling */}
-          <div className="mt-4">
-            <h4 className="font-semibold mb-2">Hostel Rules:</h4>
-            <ol className="list-decimal list-inside space-y-1">
-              <li>Students must follow the entry/exit timings strictly.</li>
-              <li>Cooking in rooms is not permitted.</li>
-              <li>Visitors must register at the reception.</li>
-              <li>Property damage will be charged accordingly.</li>
-              <li>Maintain noise levels that do not disturb others.</li>
-            </ol>
-          </div>
           <div className="mt-4">
             <h4 className="font-semibold mb-2">Contact Information:</h4>
-            <p>Warden: Dr. Sharma</p>
-            <p>Email: warden.{block.name.split(" ")[0].toLowerCase()}@nitsri.ac.in</p>
-            <p>Phone: +91-XXXXXXXXXX</p>
+            {wardenInfo && wardenInfo.length > 0 ? (
+              <div>
+                <h5 className="font-medium text-teal-700">Warden{wardenInfo.length > 1 ? 's' : ''}:</h5>
+                {wardenInfo.map((warden, index) => (
+                  <div key={index} className="mb-2">
+                    <p>{warden.name}</p>
+                    <p className="text-sm text-gray-600">{warden.department}</p>
+                    <p className="text-sm">Email: {warden.email}</p>
+                    <p className="text-sm">Phone: {warden.contact}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p>Warden: Information not available</p>
+            )}
+            
+            {hallAssistantInfo && hallAssistantInfo.length > 0 ? (
+              <div className="mt-3">
+                <h5 className="font-medium text-teal-700">Hall Assistant{hallAssistantInfo.length > 1 ? 's' : ''}:</h5>
+                {hallAssistantInfo.map((assistant, index) => (
+                  <div key={index} className="mb-2">
+                    <p>{assistant.name}</p>
+                    <p className="text-sm">Phone: {assistant.contact}</p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
           <button
             onClick={onClose}
@@ -167,9 +176,50 @@ const Carousel = ({ images }) => {
 const BoysHostel = () => {
   const [selectedBlock, setSelectedBlock] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [adminData, setAdminData] = useState(null);
+  const [wardenInfo, setWardenInfo] = useState([]);
+  const [hallAssistantInfo, setHallAssistantInfo] = useState([]);
+
+  // Fetch admin data
+  useEffect(() => {
+    fetch("/data/adminData.json")
+      .then((res) => res.json())
+      .then(setAdminData)
+      .catch((err) => console.error("Error loading admin data:", err));
+  }, []);
 
   const openModal = (block) => {
     setSelectedBlock(block);
+    
+    // Find warden info for this block
+    if (adminData) {
+      // Extract the block name without "Block" suffix for matching
+      const blockNameForMatching = block.name.replace(" Block", "");
+      
+      // Find wardens for this block
+      const blockWardens = adminData.wardens.filter(warden => {
+        if (Array.isArray(warden.block)) {
+          // For array blocks like "Mansar & Manasbal"
+          return warden.block.some(b => b.includes(blockNameForMatching));
+        } else {
+          // For single blocks
+          return warden.block === blockNameForMatching;
+        }
+      });
+      
+      // Find hall assistants for this block
+      const blockAssistants = adminData.hallAssistants.filter(assistant => {
+        if (Array.isArray(assistant.block)) {
+          return assistant.block.some(b => b.includes(blockNameForMatching));
+        } else {
+          return assistant.block === blockNameForMatching;
+        }
+      });
+
+      setWardenInfo(blockWardens);
+      setHallAssistantInfo(blockAssistants);
+    }
+    
     setIsModalOpen(true);
   };
 
@@ -287,6 +337,8 @@ const BoysHostel = () => {
           block={selectedBlock} 
           isOpen={isModalOpen} 
           onClose={closeModal} 
+          wardenInfo={wardenInfo}
+          hallAssistantInfo={hallAssistantInfo}
         />
       )}
 

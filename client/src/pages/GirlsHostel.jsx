@@ -1,5 +1,5 @@
-import { useState } from "react";
-import ScrollToTopButton from "../components/ScrollToTopButton"; // Import the ScrollToTopButton component
+import { useState, useEffect } from "react";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 import senior from "../assets/images/senior.jpg";
 import junior from "../assets/images/senior.jpg";
@@ -59,7 +59,7 @@ const ModalCarousel = ({ image, blockName }) => {
 };
 
 // Modal Component for Popup
-const Modal = ({ block, isOpen, onClose }) => {
+const Modal = ({ block, isOpen, onClose, wardenInfo }) => {
   if (!isOpen) return null;
 
   return (
@@ -99,9 +99,30 @@ const Modal = ({ block, isOpen, onClose }) => {
           </div>
           <div className="mt-4">
             <h4 className="font-semibold mb-2">Contact Information:</h4>
-            <p>Warden: Dr. Sharma</p>
-            <p>Email: warden.{block.name.split(" ")[0].toLowerCase()}@nitsri.ac.in</p>
-            <p>Phone: +91-XXXXXXXXXX</p>
+            {wardenInfo ? (
+              <>
+                <p>Warden: {wardenInfo.name}</p>
+                <p>Department: {wardenInfo.department}</p>
+                {wardenInfo.email && (
+                  <p>
+                    Email:{" "}
+                    <a 
+                      href={`mailto:${wardenInfo.email}`}
+                      className="text-teal-600 hover:underline"
+                    >
+                      {wardenInfo.email}
+                    </a>
+                  </p>
+                )}
+                <p>Contact: {wardenInfo.contact}</p>
+              </>
+            ) : (
+              <>
+                <p>Warden: Contact administration for details</p>
+                <p>Email: warden.{block.name.split(" ")[0].toLowerCase()}@nitsri.ac.in</p>
+                <p>Phone: +91-XXXXXXXXXX</p>
+              </>
+            )}
           </div>
           <button
             onClick={onClose}
@@ -155,6 +176,22 @@ const Carousel = ({ images }) => {
 const GirlsHostel = () => {
   const [selectedBlock, setSelectedBlock] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [adminData, setAdminData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch admin data from the same source as HostelAdmin component
+    fetch("/data/adminData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setAdminData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error loading admin data:", err);
+        setLoading(false);
+      });
+  }, []);
 
   const openModal = (block) => {
     setSelectedBlock(block);
@@ -172,28 +209,53 @@ const GirlsHostel = () => {
       name: "Senior Girls Hostel",
       image: senior,
       desc: "This hostel accommodates final year female B.Tech students. It is shared by two students. It has all necessary facilities and ensures a comfortable stay.",
+      adminBlockName: "Senior Girls Hostel", // This should match the block name in adminData.json
     },
     {
       name: "Junior Girls Hostel",
       image: junior,
       desc: "This hostel is designated for 3rd year female students and has a capacity of 200 students.",
+      adminBlockName: "Junior Girls Hostel",
     },
     {
       name: "New Girls Hostel",
       image: ngh,
       desc: "This Block is used for 2nd year students, equipped with modern amenities and peaceful surroundings. It accommodates 5 students per room.",
+      adminBlockName: "New Girls Hostel",
     },
     {
       name: "L Block",
       image: lhostel,
       desc: "This block accommodates 1st year students. It is a multi-seater hostel with all basic amenities.",
+      adminBlockName: "L Block",
     },
     {
       name: "A Block",
       image: ahostel,
       desc: "This block is for 1st year students. It has a capacity of 200 students and is equipped with all necessary facilities.",
+      adminBlockName: "A Block",
     },
   ];
+
+  // Function to find warden info for a specific block
+  const getWardenInfo = (blockName) => {
+    if (!adminData || !adminData.wardens) return null;
+    
+    return adminData.wardens.find(warden => {
+      if (Array.isArray(warden.block)) {
+        return warden.block.includes(blockName);
+      }
+      return warden.block === blockName;
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="px-8 md:px-24 py-6 flex justify-center items-center h-64">
+        <p className="text-xl">Loading hostel information...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="px-8 md:px-24 py-6">
@@ -225,38 +287,52 @@ const GirlsHostel = () => {
       {/* Blocks Information */}
       <h3 className="text-2xl font-semibold mt-10 mb-4">Blocks</h3>
       <div className="flex flex-col gap-6">
-        {blocks.map((block, index) => (
-          <div
-            key={index}
-            className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center cursor-pointer hover:bg-gray-200 transition-colors"
-            onClick={() => openModal(block)}
-          >
-            <img
-              src={block.image}
-              alt={block.name}
-              className="w-full md:w-1/3 h-40 object-cover rounded-lg"
-            />
-            <div className="w-full md:w-2/3">
-              <h4 className="text-xl font-semibold mb-1">{block.name}</h4>
-              <div className="h-1 w-20 bg-teal-500 rounded mb-3"></div>
-              <p>{block.desc}</p>
-              <button
-                className="mt-2 text-teal-600 font-medium hover:underline"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  openModal(block);
-                }}
-              >
-                View Details
-              </button>
+        {blocks.map((block, index) => {
+          const wardenInfo = getWardenInfo(block.adminBlockName);
+          return (
+            <div
+              key={index}
+              className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col md:flex-row gap-4 items-center cursor-pointer hover:bg-gray-200 transition-colors"
+              onClick={() => openModal(block)}
+            >
+              <img
+                src={block.image}
+                alt={block.name}
+                className="w-full md:w-1/3 h-40 object-cover rounded-lg"
+              />
+              <div className="w-full md:w-2/3">
+                <h4 className="text-xl font-semibold mb-1">{block.name}</h4>
+                <div className="h-1 w-20 bg-teal-500 rounded mb-3"></div>
+                <p>{block.desc}</p>
+                {wardenInfo && (
+                  <p className="mt-2 text-sm">
+                    <span className="font-medium">Warden: </span>
+                    {wardenInfo.name} ({wardenInfo.department})
+                  </p>
+                )}
+                <button
+                  className="mt-2 text-teal-600 font-medium hover:underline"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openModal(block);
+                  }}
+                >
+                  View Details
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Modal for displaying hostel details */}
       {selectedBlock && (
-        <Modal block={selectedBlock} isOpen={isModalOpen} onClose={closeModal} />
+        <Modal 
+          block={selectedBlock} 
+          isOpen={isModalOpen} 
+          onClose={closeModal} 
+          wardenInfo={getWardenInfo(selectedBlock.adminBlockName)}
+        />
       )}
 
       {/* Scroll to Top Button */}
