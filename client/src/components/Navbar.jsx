@@ -103,55 +103,15 @@ const Navbar = () => {
               </li>
 
               {/* Hostel Administration */}
-              <li
-                onMouseEnter={() => setActiveDropdown("admin")}
-                onMouseLeave={() => setActiveDropdown(null)}
-                className="relative"
-              >
+              <li>
                 <Link
                   to="/hostel-admin"
                   className="hover:underline block py-2 md:py-0"
                 >
-                  Hostel Administration ▾
+                  Hostel Administration
                 </Link>
-                {activeDropdown === "admin" && (
-                  <ul className="absolute left-0 md:left-auto md:right-0 bg-white text-black rounded-md shadow-md z-10 w-48">
-                    <li>
-                      <a
-                        href="/hostel-admin#dean-welfare"
-                        className="block px-4 py-2 hover:bg-gray-100"
-                      >
-                        Dean Students Welfare
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/hostel-admin#associate-dean"
-                        className="block px-4 py-2 hover:bg-gray-100"
-                      >
-                        Associate Dean
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/hostel-admin#wardens"
-                        className="block px-4 py-2 hover:bg-gray-100"
-                      >
-                        Wardens
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/hostel-admin#hall-assistants"
-                        className="block px-4 py-2 hover:bg-gray-100"
-                      >
-                        Hall Assistants
-                      </a>
-                    </li>
-                  </ul>
-                )}
               </li>
-
+            
               {/* Hostel Info */}
               <li
                 onMouseEnter={() => setActiveDropdown("hostel")}
