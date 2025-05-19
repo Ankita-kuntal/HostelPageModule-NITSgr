@@ -99,30 +99,22 @@ const Modal = ({ block, isOpen, onClose, wardenInfo }) => {
           </div>
           <div className="mt-4">
             <h4 className="font-semibold mb-2">Contact Information:</h4>
-            {wardenInfo ? (
+            
               <>
-                <p>Warden: {wardenInfo.name}</p>
-                <p>Department: {wardenInfo.department}</p>
-                {wardenInfo.email && (
+                <p>Warden: {block.warden}</p>
+                <p>Department: {block.wardenDepartment}</p>
+                
                   <p>
                     Email:{" "}
                     <a 
-                      href={`mailto:${wardenInfo.email}`}
+                      href={`mailto:${block.wardenEmail}`}
                       className="text-teal-600 hover:underline"
                     >
-                      {wardenInfo.email}
+                      {block.wardenEmail}
                     </a>
                   </p>
-                )}
-                <p>Contact: {wardenInfo.contact}</p>
+                <p>Contact: {block.wardenContact}</p>
               </>
-            ) : (
-              <>
-                <p>Warden: Contact administration for details</p>
-                <p>Email: warden.{block.name.split(" ")[0].toLowerCase()}@nitsri.ac.in</p>
-                <p>Phone: +91-XXXXXXXXXX</p>
-              </>
-            )}
           </div>
           <button
             onClick={onClose}
@@ -209,31 +201,51 @@ const GirlsHostel = () => {
       name: "Senior Girls Hostel",
       image: senior,
       desc: "This hostel accommodates final year female B.Tech students. It is shared by two students. It has all necessary facilities and ensures a comfortable stay.",
-      adminBlockName: "Senior Girls Hostel", // This should match the block name in adminData.json
+      adminBlockName: "Senior Girls Hostel", 
+      warden: "Dr. Fatima Jalid",
+      wardenDepartment: "Chemical Engineering",
+      wardenContact: "9990795522",
+      wardenEmail: " fatima@nitsri.ac.in"
     },
     {
       name: "Junior Girls Hostel",
       image: junior,
       desc: "This hostel is designated for 3rd year female students and has a capacity of 200 students.",
       adminBlockName: "Junior Girls Hostel",
+      warden: "Dr. Nitika Kundan",
+      wardenDepartment: "MMED",
+      wardenContact: "6006191446",
+      wardenEmail: " nitika.kundan@nitsri.ac.in"
     },
     {
       name: "New Girls Hostel",
       image: ngh,
       desc: "This Block is used for 2nd year students, equipped with modern amenities and peaceful surroundings. It accommodates 5 students per room.",
-      adminBlockName: "New Girls Hostel",
+      adminBlockName: "New Girls Hostel", 
+      warden: "Dr. Janani L",
+      wardenDepartment: "Civil Engineering",
+      wardenContact: "944691502",
+      wardenEmail: " janani@nitsri.ac.in"
     },
     {
       name: "L Block",
       image: lhostel,
       desc: "This block accommodates 1st year students. It is a multi-seater hostel with all basic amenities.",
-      adminBlockName: "L Block",
+      adminBlockName: "L Block", 
+      warden: "Dr. Fatima Jalid",
+      wardenDepartment: "Chemical Engineering",
+      wardenContact: "9990795522",
+      wardenEmail: " fatima@nitsri.ac.in"
     },
     {
       name: "A Block",
       image: ahostel,
       desc: "This block is for 1st year students. It has a capacity of 200 students and is equipped with all necessary facilities.",
-      adminBlockName: "A Block",
+      adminBlockName: "A Block", 
+      warden: "Dr. Fatima Jalid",
+      wardenDepartment: "Chemical Engineering",
+      wardenContact: "9990795522",
+      wardenEmail: " fatima@nitsri.ac.in"
     },
   ];
 
