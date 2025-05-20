@@ -92,6 +92,7 @@ const HostelAdmin = () => {
           <CardGrid data={assistantsWithoutBlock} type="hall" />
         </section>
       )}
+      <ScrollToTopButton />
     </div>
   );
 };
@@ -164,7 +165,6 @@ const CardGrid = ({ data, type }) => (
         </div>
       );
     })}
-    <ScrollToTopButton />
   </div>
 );
 
