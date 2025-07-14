@@ -23,6 +23,30 @@ const Navbar = () => {
     }
   };
 
+  // Add this function inside Navbar component
+  const handleDropdownParentClick = (dropdownKey, parentRoute) => {
+    if (window.innerWidth < 768) { // mobile only
+      if (activeDropdown === dropdownKey) {
+        setActiveDropdown(null);
+        // Optionally navigate to parentRoute here if you want navigation on second click
+        // window.location.href = parentRoute; // or use navigate from react-router
+      } else {
+        setActiveDropdown(dropdownKey);
+      }
+    }
+  };
+
+  // Add this function inside Navbar component
+  const handleNavLinkClick = () => {
+    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+  };
+
+  // Add this function inside Navbar component
+  const handleDropdownOptionClick = () => {
+    setActiveDropdown(null);
+    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       {/* Existing header — visible only on md and above */}
@@ -97,7 +121,7 @@ const Navbar = () => {
             <ul className="flex flex-col md:flex-row md:justify-end md:space-x-4 md:mt-0 text-sm sm:text-base font-medium">
               {/* Home */}
               <li>
-                <Link to="/" className="hover:underline block py-2 md:py-0">
+                <Link to="/" className="hover:underline block py-2 md:py-0" onClick={handleNavLinkClick}>
                   Home
                 </Link>
               </li>
@@ -107,6 +131,7 @@ const Navbar = () => {
                 <Link
                   to="/hostel-admin"
                   className="hover:underline block py-2 md:py-0"
+                  onClick={handleNavLinkClick}
                 >
                   Hostel Administration
                 </Link>
@@ -114,11 +139,14 @@ const Navbar = () => {
             
               {/* Hostel Info */}
               <li
-                onMouseEnter={() => setActiveDropdown("hostel")}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => window.innerWidth >= 768 && setActiveDropdown("hostel")}
+                onMouseLeave={() => window.innerWidth >= 768 && setActiveDropdown(null)}
                 className="relative"
               >
-                <span className="cursor-pointer hover:underline block py-2 md:py-0">
+                <span
+                  className="cursor-pointer hover:underline block py-2 md:py-0"
+                  onClick={() => handleDropdownParentClick("hostel")}
+                >
                   Hostel Info ▾
                 </span>
                 {activeDropdown === "hostel" && (
@@ -127,6 +155,7 @@ const Navbar = () => {
                       <Link
                         to="/girls-hostel"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Girls Hostel
                       </Link>
@@ -135,6 +164,7 @@ const Navbar = () => {
                       <Link
                         to="/boys-hostel"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Boys Hostel
                       </Link>
@@ -145,22 +175,23 @@ const Navbar = () => {
 
               {/* Anti-Ragging */}
               <li
-                onMouseEnter={() => setActiveDropdown("antiRagging")}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => window.innerWidth >= 768 && setActiveDropdown("antiRagging")}
+                onMouseLeave={() => window.innerWidth >= 768 && setActiveDropdown(null)}
                 className="relative"
               >
-                <Link
-                  to="/anti-ragging/rules"
-                  className="hover:underline block py-2 md:py-0"
+                <span
+                  className="cursor-pointer hover:underline block py-2 md:py-0"
+                  onClick={() => handleDropdownParentClick("antiRagging")}
                 >
                   Anti-Ragging ▾
-                </Link>
+                </span>
                 {activeDropdown === "antiRagging" && (
                   <ul className="absolute left-0 md:left-auto md:right-0 bg-white text-black rounded-md shadow-md z-10 w-56">
                     <li>
                       <a
                         href="/anti-ragging/committee"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Anti Ragging Committee
                       </a>
@@ -169,6 +200,7 @@ const Navbar = () => {
                       <a
                         href="/anti-ragging/rules"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Anti Ragging Rules, Regulations and Undertakings
                       </a>
@@ -179,22 +211,23 @@ const Navbar = () => {
 
               {/* Rules */}
               <li
-                onMouseEnter={() => setActiveDropdown("rules")}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => window.innerWidth >= 768 && setActiveDropdown("rules")}
+                onMouseLeave={() => window.innerWidth >= 768 && setActiveDropdown(null)}
                 className="relative"
               >
-                <Link
-                  to="/hostel-rules"
-                  className="hover:underline block py-2 md:py-0"
+                <span
+                  className="cursor-pointer hover:underline block py-2 md:py-0"
+                  onClick={() => handleDropdownParentClick("rules")}
                 >
                   Rules ▾
-                </Link>
+                </span>
                 {activeDropdown === "rules" && (
                   <ul className="absolute left-0 md:left-auto md:right-0 bg-white text-black rounded-md shadow-md z-10 w-48">
                     <li>
                       <Link
                         to="/hostel-rules-summary"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Summary
                       </Link>
@@ -203,6 +236,7 @@ const Navbar = () => {
                       <Link
                         to="/hostel-rules"
                         className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={handleDropdownOptionClick}
                       >
                         Detailed Rules
                       </Link>
@@ -213,17 +247,17 @@ const Navbar = () => {
 
               {/* Downloads */}
               <li
-                onMouseEnter={() => setShowDownloadsDropdown(true)}
-                onMouseLeave={() => setShowDownloadsDropdown(false)}
+                onMouseEnter={() => window.innerWidth >= 768 && setShowDownloadsDropdown(true)}
+                onMouseLeave={() => window.innerWidth >= 768 && setShowDownloadsDropdown(false)}
                 className="relative"
               >
-                <Link
-                  to="/downloads"
+                <span
                   className="cursor-pointer hover:underline block py-2 md:py-0"
+                  onClick={() => handleDropdownParentClick("downloads")}
                 >
                   Downloads ▾
-                </Link>
-                {showDownloadsDropdown && (
+                </span>
+                {activeDropdown === "downloads" && (
                   <ul className="absolute left-0 md:left-auto md:right-0 bg-white text-black rounded-md shadow-md z-10 w-56">
                     {downloadsData.map((item, index) => (
                       <li key={index}>
@@ -232,6 +266,7 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block px-4 py-2 hover:bg-gray-100"
+                          onClick={handleDropdownOptionClick}
                         >
                           {item.name}
                         </a>
@@ -244,7 +279,7 @@ const Navbar = () => {
               {/* Contact Us */}
               <li>
                 <button
-                  onClick={() => setShowContactModal(true)}
+                  onClick={() => { setShowContactModal(true); handleNavLinkClick(); }}
                   className="hover:underline block py-2 md:py-0 text-left w-full md:w-auto"
                 >
                   Contact Us
@@ -256,6 +291,7 @@ const Navbar = () => {
                 <Link
                   to="/webteam"
                   className="hover:underline block py-2 md:py-0"
+                  onClick={handleNavLinkClick}
                 >
                   Web Team
                 </Link>
