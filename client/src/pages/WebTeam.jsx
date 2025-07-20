@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Asma Siddiqui",
     role: "Web Developer",
     image: "/assets/team/asma.webp",
-    funFact: "Powered by chai, driven by code ☕",
+    funFact: "Bookmarks aren't just for browsers 🔖",
     email: "asmasiddiqui511@gmail.com",
     enrollment: "2023BCSE029",
     linkedin: "https://www.linkedin.com/in/asmasid11",
