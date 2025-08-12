@@ -202,10 +202,7 @@ const GirlsHostel = () => {
       image: senior,
       desc: "This hostel accommodates final year female B.Tech students. It is shared by two students. It has all necessary facilities and ensures a comfortable stay.",
       adminBlockName: "Senior Girls Hostel", 
-      warden: "Dr. Fatima Jalid",
-      wardenDepartment: "Chemical Engineering",
-      wardenContact: "9990795522",
-      wardenEmail: " fatima@nitsri.ac.in"
+
     },
     {
       name: "Junior Girls Hostel",
