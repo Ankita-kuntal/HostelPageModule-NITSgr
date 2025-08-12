@@ -209,7 +209,7 @@ const GirlsHostel = () => {
       name: "Senior Girls Hostel",
       image: senior,
       desc: "This hostel accommodates final year female B.Tech students. It is shared by two students. It has all necessary facilities and ensures a comfortable stay.",
-      adminBlockName: "Senior Girls Hostel", // This should match the block name in adminData.json
+      adminBlockName: "Senior Girls Hostel", 
     },
     {
       name: "Junior Girls Hostel",

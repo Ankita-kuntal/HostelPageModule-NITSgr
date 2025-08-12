@@ -339,15 +339,6 @@ const Navbar = () => {
                   shashikantkumar@nitsri.ac.in
                 </a>
               </li>
-              <li>
-                <strong>Anti-Ragging Cell:</strong> +91-7006725396,{" "}
-                <a
-                  href="mailto:anti.ragging@nitsri.ac.in"
-                  className="text-teal-600 underline"
-                >
-                  anti.ragging@nitsri.ac.in
-                </a>
-              </li>
             </ul>
           </div>
         </div>

@@ -141,10 +141,10 @@
       "image": "/assets/images/admin/showkatsidiq.png"
     },
     {
-      "name": "Mr. Arshid Ismail Bhat",
-      "block": "",
-      "contact": "9086863620",
-      "image": "/assets/images/admin/arshid.png"
+      "name": "Mr. Altaf Ahmad Rather",
+      "block": "All Hostels",
+      "contact": "8899026742",
+      "image": "/assets/images/admin/altafrather.jpg"
     },
     {
       "name": "Mr. Khurshid Ahmad",
@@ -154,7 +154,7 @@
     },
     {
       "name": "Mr. Umer Habib",
-      "block": "",
+      "block": "Chenab",
       "contact": "6005588252",
       "image": "/assets/images/userIcon.png"
     },
@@ -166,7 +166,7 @@
     },
     {
       "name": "Mr. Yasir Rizvi",
-      "block": "",
+      "block": "Jhelum",
       "contact": "7006059229",
       "image": "/assets/images/userIcon.png"
     },
@@ -178,19 +178,19 @@
     },
     {
       "name": "Mr. Mohammad Aslam",
-      "block": "",
+      "block": ["Mansar & Manasbal"],
       "contact": "7006345529",
       "image": "/assets/images/userIcon.png"
     },
     {
       "name": "Mr. Shahid Ashraf",
-      "block": ["Jhelum Extension", "C-Block", "Tawi"],
+      "block": "Indus",
       "contact": "7051786578",
       "image": "/assets/images/admin/shahidashraf.png"
     },
     {
       "name": "Mr. Waheed Ahmad",
-      "block": "",
+      "block": ["Tawi", "C-Block", "Jhelum Extension"],
       "contact": "9797459593",
       "image": "/assets/images/admin/waheedahmad.jpg"
     },
@@ -199,12 +199,6 @@
       "block": "All Hostels",
       "contact": "7051550554",
       "image": "/assets/images/userIcon.png"
-    },
-    {
-      "name": "Mr. Altaf Ahmad Rather",
-      "block": "",
-      "contact": "8899026742",
-      "image": "/assets/images/admin/altafrather.jpg"
     },
     {
       "name": "Miss Gulsiona Baneo",
