@@ -34,7 +34,7 @@ const HostelAdmin = () => {
       ...wardens.flatMap(w => Array.isArray(w.block) ? w.block : [w.block]),
       ...hallAssistants.flatMap(h => Array.isArray(h.block) ? h.block : [h.block]).filter(Boolean),
     ]),
-  ];
+  ]; 
 
   // Filter out blocks that don't have either wardens or hall assistants
   const validBlocks = blocks.filter(block => {
@@ -92,6 +92,7 @@ const HostelAdmin = () => {
           <CardGrid data={assistantsWithoutBlock} type="hall" />
         </section>
       )}
+      <ScrollToTopButton />
     </div>
   );
 };
@@ -164,7 +165,6 @@ const CardGrid = ({ data, type }) => (
         </div>
       );
     })}
-    <ScrollToTopButton />
   </div>
 );
 

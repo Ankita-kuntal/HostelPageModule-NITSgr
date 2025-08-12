@@ -20,96 +20,105 @@
 
   "wardens": [
     {
-      "name": "Dr. Janibul Bashir",
-      "department": "IT Engineering",
-      "block": "Indus",
-      "email": "janibbashir@nitsri.ac.in",
-      "contact": "8825099229",
-      "image": "/assets/images/admin/janib.jpg"
-    },
-    {
-      "name": "Dr. Shakeel Ahmad Waseem",
-      "department": "Civil Engineering",
-      "block": "Chenab",
-      "email": "shakeelahmad@nitsri.ac.in",
-      "contact": "7889673358",
-      "image": "/assets/images/admin/shakeelwaseem.jpeg"
-    },
-    {
-      "name": "Dr. Pramod Kumar Yadav",
-      "department": "CS Engineering",
-      "block": ["Mansar & Manasbal"],
-      "email": "pramod.kumar@nitsri.ac.in",
-      "contact": "9411407432",
-      "image": "/assets/images/admin/pramodkumar.jpg"
-    },
-    {
-      "name": "Dr. Ashok Kumar",
-      "department": "EC Engineering",
-      "block": "Tawi",
-      "email": "ashok.kumar@nitsri.ac.in",
-      "contact": "8102350942",
-      "image": "/assets/images/admin/ashokkumar.jpg"
-    },
-    {
-      "name": "Dr. Asadur Rahman",
-      "department": "Electrical Engineering",
-      "block": "Jhelum Extension",
-      "email": "asadur@nitsri.ac.in",
-      "contact": "9957497127",
-      "image": "/assets/images/admin/asadurrahman.jpg"
-    },
-    {
-      "name": "Dr. Shrikant S Maktedar",
-      "department": "Chemistry",
-      "block": "Chenab",
-      "email": "shrikant@nitsri.ac.in",
-      "contact": "9978500944",
-      "image": "/assets/images/admin/shrikantmaktedar.png"
-    },
-    {
-      "name": "Dr. Amandeep Singh",
-      "department": "EC Engineering",
-      "block": "Jhelum",
-      "email": "amansingh@nitsri.ac.in",
-      "contact": "7508250907",
-      "image": "/assets/images/admin/amandeepsingh.jpg"
-    },
-    {
-      "name": "Dr. Munir Ahmad Nayak",
-      "department": "Civil Engineering",
-      "block": "Jhelum",
-      "email": "munir.nayak@nitsri.ac.in",
-      "contact": "9993815818",
-      "image": "/assets/images/admin/munirnayak.png"
-    },
-    {
-      "name": "Dr. Noor Zaman Khan",
-      "department": "Mechanical Engineering",
-      "block": ["C-Block"],
-      "email": "noorzaman@nitsri.ac.in",
-      "contact": "9891674435",
-      "image": "/assets/images/admin/noorzamankhan.jpg"
-    },
-    {
-      "name": "Dr. Prabal Verma",
-      "department": "IT Engineering",
-      "block": ["Mansar & Manasbal"],
-      "email": "prabal.verma@nitsri.ac.in",
-      "contact": "9419223663",
-      "image": "/assets/images/admin/prabalverma.jpg"
-    },
-    {
       "name": "Dr. Mukund Dutt Sharma",
-      "department": "Mechanical Engineering",
+      "department": "Mechanical",
       "block": "Indus",
       "email": "mukund.sharma@nitsri.ac.in",
       "contact": "9882241895",
       "image": "/assets/images/admin/mukunddutt.jpeg"
     },
     {
+      "name": "Dr. Janibul Bashir",
+      "department": "IT",
+      "block": "Indus",
+      "email": "janibbashir@nitsri.ac.in",
+      "contact": "8825099229",
+      "image": "/assets/images/admin/janib.jpg"
+    },
+
+    {
+      "name": "Dr. Shrikant S Maktedar",
+      "department": "Chemical",
+      "block": "Chenab",
+      "email": "shrikant@nitsri.ac.in",
+      "contact": "9978500944",
+      "image": "/assets/images/admin/shrikantmaktedar.png"
+    },
+    {
+      "name": "Dr. Pankaj Kumar",
+      "department": "Electrical",
+      "block": "Chenab",
+      "email": "pankaj@nitsri.ac.in",
+      "contact": "8290297038",
+      "image": "/assets/images/admin/pankaj.jpg"
+    },
+
+    {
+      "name": "Dr. Amandeep Singh",
+      "department": "Electrical",
+      "block": "Jhelum",
+      "email": "amansingh@nitsri.ac.in",
+      "contact": "7508250907",
+      "image": "/assets/images/admin/amandeepsingh.jpg"
+    },
+    {
+      "name": "Dr. Srinibash Mishra",
+      "department": "Metallurgical & Materials",
+      "block": "Jhelum",
+      "email": "srinibash@nitsri.ac.in",
+      "contact": "6203587029",
+      "image": "/assets/images/admin/srinibash.jpeg"
+    },
+
+    {
+      "name": "Dr. Pramod Kumar Yadav",
+      "department": "Computer Science",
+      "block": ["Mansar & Manasbal"],
+      "email": "pramod.kumar@nitsri.ac.in",
+      "contact": "9411407432",
+      "image": "/assets/images/admin/pramodkumar.jpg"
+    },
+    {
+      "name": "Dr. Prabal Verma",
+      "department": "IT",
+      "block": ["Mansar & Manasbal"],
+      "email": "prabal.verma@nitsri.ac.in",
+      "contact": "9419223663",
+      "image": "/assets/images/admin/prabalverma.jpg"
+    },
+
+    {
+      "name": "Dr. Ashok Kumar",
+      "department": "Electronics & Communication",
+      "block": "Tawi",
+      "email": "ashok.kumar@nitsri.ac.in",
+      "contact": "8102350942",
+      "image": "/assets/images/admin/ashokkumar.jpg"
+    },
+
+    {
+      "name": "Dr. Asadur Rahman",
+      "department": "Electrical",
+      "block": "Jhelum Extension",
+      "email": "asadur@nitsri.ac.in",
+      "contact": "9957497127",
+      "image": "/assets/images/admin/asadurrahman.jpg"
+    },
+
+    {
+      "name": "Dr. Noor Zaman Khan",
+      "department": "Mechanical",
+      "block": ["C-Block"],
+      "email": "noorzaman@nitsri.ac.in",
+      "contact": "9891674435",
+      "image": "/assets/images/admin/noorzamankhan.jpg"
+    },
+
+  
+
+    {
       "name": "Dr. Fatima Jalid",
-      "department": "Chemical Engineering",
+      "department": "Chemical",
       "block": "Girls Hostel",
       "email": "fatima@nitsri.ac.in",
       "contact": "9990795522",
@@ -117,7 +126,7 @@
     },
     {
       "name": "Dr. Janani L",
-      "department": "Civil Engineering",
+      "department": "Civil",
       "block": "Girls Hostel",
       "email": "janani@nitsri.ac.in",
       "contact": "944691502",
