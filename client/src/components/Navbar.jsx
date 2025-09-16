@@ -6,7 +6,6 @@ import instituteLogo from "../assets/images/logo-name.png";
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [showContactModal, setShowContactModal] = useState(false);
-  const [showDownloadsDropdown, setShowDownloadsDropdown] = useState(false);
   const [downloadsData, setDownloadsData] = useState([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -247,8 +246,8 @@ const Navbar = () => {
 
               {/* Downloads */}
               <li
-                onMouseEnter={() => window.innerWidth >= 768 && setShowDownloadsDropdown(true)}
-                onMouseLeave={() => window.innerWidth >= 768 && setShowDownloadsDropdown(false)}
+                onMouseEnter={() => window.innerWidth >= 768 && setActiveDropdown("downloads")}
+                onMouseLeave={() => window.innerWidth >= 768 && setActiveDropdown(null)}
                 className="relative"
               >
                 <span
